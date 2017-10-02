@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: d5a11804344dcbc4f809188966602a17
+timeCreated: 1506986285
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Graffiti Treat
+  fontNames:
+  - Graffiti Treat
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 2dc1a3403d06f684f9846f1fa93b2b22, type: 3}
+  - {fileID: 12800000, guid: 4299130b47804154f950b5989a263ea1, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
