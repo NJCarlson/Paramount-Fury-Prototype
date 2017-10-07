@@ -76,15 +76,15 @@
     <Reference Include="UnityEditor">
       <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Common">
-      <HintPath>Library\UnityAssemblies\UnityEditor.iOS.Extensions.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\NC_MenuManager.cs" />
+    <Compile Include="Assets\Team Members\Nick\NC_AgentTest.cs" />
+    <Compile Include="Assets\Team Members\Nick\NickNavNode.cs" />
+    <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Graph.cs" />
+    <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Node.cs" />
+    <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_PathfindingTest.cs" />
+    <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Search.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
