@@ -52,11 +52,14 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\NC_MenuManager.cs" />
-     <Compile Include="Assets\Team Members\Caleb\CJC_cameraTrans.cs" />
-     <Compile Include="Assets\Team Members\Caleb\CJC_CheckforController.cs" />
-     <Compile Include="Assets\Team Members\Caleb\CJC_HinezController.cs" />
-     <Compile Include="Assets\Team Members\Caleb\CJC_mouseRotation.cs" />
-     <Compile Include="Assets\Team Members\Caleb\CJC_UML.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_357bullet.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_cameraTrans.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_CheckforController.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_GunManager.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_HinezController.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_MeleeWeaponManager.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_mouseRotation.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_UML.cs" />
      <Compile Include="Assets\Team Members\Nick\NC_AgentTest.cs" />
      <Compile Include="Assets\Team Members\Nick\NickNavNode.cs" />
      <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Graph.cs" />

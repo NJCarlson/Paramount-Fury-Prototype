@@ -9,6 +9,8 @@ public class CJC_HinezController : CJC_UML {
 	public Vector3 movedirection = Vector3.zero;
 	public CharacterController controller;
 
+	public bool furyactive;
+
 	bool issprinting;
 	bool ismoving;
 
@@ -37,6 +39,7 @@ public class CJC_HinezController : CJC_UML {
 		controlmovement ();
 		controlsprint ();
 		controlexhaustion ();
+		controlfury ();
 	}
 
 	void checkspawned()
@@ -67,6 +70,34 @@ public class CJC_HinezController : CJC_UML {
 		else if (Input.GetAxis ("Horizontal") ==0 && Input.GetAxis ("Vertical") ==0)
 		{
 			ismoving = false;
+		}
+
+	}
+
+	void controlfury()
+	{
+		if (!furyactive) {
+
+			if (furybar >= furybarmax) {
+				furybar = furybarmax;
+			}
+
+
+			if (Input.GetKeyDown (KeyCode.Space) | Input.GetButtonDown ("360_XButton")) {
+				if (furybar >= furybarmax / 2) {
+					furyactive = true;
+				}
+			}
+		}
+		else if (furyactive)
+		{
+			furybar -= Time.deltaTime*10;
+
+			if (furybar <= 0)
+			{
+				furybar = 0;
+				furyactive = false;
+			}
 		}
 
 	}
