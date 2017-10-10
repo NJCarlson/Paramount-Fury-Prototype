@@ -52,7 +52,9 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\NC_MenuManager.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_cameraTrans.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_HinezController.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_mouseRotation.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_UML.cs" />
      <Compile Include="Assets\Team Members\Nick\NC_AgentTest.cs" />
      <Compile Include="Assets\Team Members\Nick\NickNavNode.cs" />
