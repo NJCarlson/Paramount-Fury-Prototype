@@ -16,7 +16,8 @@ public class CJC_357bullet : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		controlbuttlerkill ();
 		controlmovement ();
 	}
@@ -41,6 +42,12 @@ public class CJC_357bullet : MonoBehaviour {
 		{
 			print ("hitwall");
 			Destroy (gameObject, 0);
+		}
+		else if (other.tag == "enemy")
+		{
+			GetComponent<SpriteRenderer> ().enabled = false;
+			GetComponent<BoxCollider> ().enabled = false;
+			Destroy (gameObject, .1f);
 		}
 	}
 }

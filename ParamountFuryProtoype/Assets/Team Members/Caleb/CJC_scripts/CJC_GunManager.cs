@@ -46,12 +46,12 @@ public class CJC_GunManager : MonoBehaviour {
 				weaponcooldown = gunspeed;
 			}
 
-			if (Input.GetKey (KeyCode.Mouse0) | Input.GetAxis ("360_Triggers") < 0) {
+			//if (Input.GetKey (KeyCode.Mouse0) | Input.GetAxis ("360_Triggers") < 0) {
 				if (weaponcooldown >= gunspeed) {
 					Instantiate (jerryprojectile, bulletspawn.transform.position, bulletspawn.transform.rotation);
 					weaponcooldown = 0;
 				}
-			}
+			//}
 		} else if (!jerry.furyactive)
 		{
 			jerrygun.SetActive (false);
