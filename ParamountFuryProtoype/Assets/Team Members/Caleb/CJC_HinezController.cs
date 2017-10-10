@@ -73,9 +73,10 @@ public class CJC_HinezController : CJC_UML {
 
 	void controlsprint()
 	{
-		if (Input.GetKey (KeyCode.LeftShift) && !isexhauseted)
+		if (Input.GetKey (KeyCode.LeftShift) | Input.GetButton("360_LeftThumbStickButton"))
 		{
-
+			if (!isexhauseted)
+			{
 			if (staminabar <= 0)
 			{
 				issprinting = false;
@@ -86,8 +87,9 @@ public class CJC_HinezController : CJC_UML {
 			{
 				issprinting = true;
 			}
+			}
 		}
-		else if (Input.GetKeyUp (KeyCode.LeftShift))
+		else if (Input.GetKeyUp (KeyCode.LeftShift) | Input.GetButtonUp("360_LeftThumbStickButton"))
 		{
 			issprinting = false;
 		}
