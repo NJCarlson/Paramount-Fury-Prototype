@@ -52,9 +52,9 @@ public class CJC_HinezController : CJC_UML {
 
 	void controlmovement()
 	{
-		movedirection.x = (Input.GetAxis ("Horizontal") * Time.deltaTime * movespeed*10);
+		movedirection.x = (Input.GetAxis ("Horizontal") * Time.deltaTime * movespeed*15);
 		movedirection.x *= movespeed;
-		movedirection.y = (Input.GetAxis ("Vertical") * Time.deltaTime * movespeed*10);
+		movedirection.y = (Input.GetAxis ("Vertical") * Time.deltaTime * movespeed*15);
 		movedirection.y *= movespeed;
 
 		movedirection = transform.TransformDirection (movedirection);

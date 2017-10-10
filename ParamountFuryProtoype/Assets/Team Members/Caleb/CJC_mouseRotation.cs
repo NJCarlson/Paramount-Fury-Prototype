@@ -5,6 +5,12 @@ using UnityEngine;
 public class CJC_mouseRotation : MonoBehaviour {
 
 
+	public string horizontalaxis = "360_RightStickH";
+	public string verticalaxis = "360_RightStickV";
+
+	[SerializeField]
+	float testangle = 30;
+
 	void Update () 
 	{
 		IfControllerPluggedIn ();
@@ -13,19 +19,21 @@ public class CJC_mouseRotation : MonoBehaviour {
 
 	void IfControllerPluggedIn()
 	{
-		if (CJC_CheckforController.controlleractive) {
+		if (CJC_CheckforController.controlleractive)
+		{
+
+			float rx = Input.GetAxis ("360_RightStickH");
+			float rY = Input.GetAxis ("360_RightStickV");
+
+			float angle = Mathf.Atan2 (rx, rY);
+			transform.rotation = Quaternion.EulerAngles (0, 0, angle+testangle);
+
+
+			//Vector3 shootDirection = Vector3.right * Input.GetAxis (horizontalaxis) + Vector3.forward * Input.GetAxis (verticalaxis);
 			
-			//Get the Screen positions of the object
-			//Vector2 positionOnScreen = Camera.main.WorldToViewportPoint (transform.position);
+			//transform.rotation = Quaternion.LookRotation (shootDirection, Vector3.up);
 
-			//Get the Screen position of the mouse
-			//Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint (Input.mousePosition);
-
-			//Get the angle between the points
-			//float angle = AngleBetweenTwoPoints (positionOnScreen, mouseOnScreen);
-
-			//Ta Daaa
-			//transform.rotation = Quaternion.Euler (new Vector3 (0f, 0f, Input.GetAxis("360_RightStick")));
+			//transform.rotation = Quaternion.Euler (new Vector3 (0f, 0f, -Input.GetAxis("360_RightStick")* Time.deltaTime* 1000));
 		}
 
 	}
