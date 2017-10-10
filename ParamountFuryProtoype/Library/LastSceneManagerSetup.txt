@@ -1,8 +1,4 @@
 sceneSetups:
-<<<<<<< HEAD
-- path: Assets/Team Members/Brian/BrianTest.unity
-=======
 - path: Assets/Team Members/Caleb/CalebTest.unity
->>>>>>> e6ca0ee3d77b9738eaa09a903d1887b605129d4b
   isLoaded: 1
   isActive: 1

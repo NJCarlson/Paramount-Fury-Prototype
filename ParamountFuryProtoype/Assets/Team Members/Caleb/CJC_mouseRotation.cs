@@ -9,7 +9,7 @@ public class CJC_mouseRotation : MonoBehaviour {
 	public string verticalaxis = "360_RightStickV";
 
 	[SerializeField]
-	float testangle = 30;
+	float testangle = 89.55f;
 
 	void Update () 
 	{
@@ -25,7 +25,11 @@ public class CJC_mouseRotation : MonoBehaviour {
 			float rx = Input.GetAxis ("360_RightStickH");
 			float rY = Input.GetAxis ("360_RightStickV");
 
+
+
 			float angle = Mathf.Atan2 (rx, rY);
+
+			if (Input.GetAxis("360_RightStickH") >.1f | Input.GetAxis("360_RightStickH") <0f | Input.GetAxis("360_RightStickV") >.1f | Input.GetAxis("360_RightStickV") <0f)
 			transform.rotation = Quaternion.EulerAngles (0, 0, angle+testangle);
 
 
