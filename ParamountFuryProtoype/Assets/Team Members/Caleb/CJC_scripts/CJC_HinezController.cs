@@ -22,12 +22,7 @@ public class CJC_HinezController : CJC_UML {
 	void Start ()
 	{
 		charactername = "jerry";
-
-	}
-
-	void LateStart()
-	{
-		
+		playerlives = 3;
 	}
 	
 	void Update ()
@@ -40,6 +35,11 @@ public class CJC_HinezController : CJC_UML {
 		controlsprint ();
 		controlexhaustion ();
 		controlfury ();
+	}
+
+	void Managelives()
+	{
+		
 	}
 
 	void checkspawned()

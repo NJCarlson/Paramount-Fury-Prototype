@@ -9,6 +9,8 @@ public class CJC_UML : MonoBehaviour {
 
 	public float movespeed;
 
+	public int playerlives;
+
 
 	public float health;
 
