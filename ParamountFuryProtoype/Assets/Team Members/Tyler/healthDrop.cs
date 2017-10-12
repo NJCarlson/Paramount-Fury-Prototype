@@ -6,6 +6,8 @@ using System.Globalization;
 
 public class healthDrop: MonoBehaviour {
 
+	public float healthamount = 10;
+
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +26,7 @@ public class healthDrop: MonoBehaviour {
             CJC_HinezController player = other.GetComponent<CJC_HinezController>();
             if (player != null && player.health > 0)
             {
-                player.health += 10;
+				player.health += healthamount;
                 Destroy(gameObject, .1f);
 
             }
