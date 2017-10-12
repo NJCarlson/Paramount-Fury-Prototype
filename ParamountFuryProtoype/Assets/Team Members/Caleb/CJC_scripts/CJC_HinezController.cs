@@ -13,6 +13,7 @@ public class CJC_HinezController : CJC_UML {
 
 	bool issprinting;
 	bool ismoving;
+	bool hasdied;
 
 	bool isexhauseted;
 	float exhaustiontimermax = 25;
@@ -35,9 +36,29 @@ public class CJC_HinezController : CJC_UML {
 		controlsprint ();
 		controlexhaustion ();
 		controlfury ();
+		Managelives ();
 	}
 
 	void Managelives()
+	{
+		
+	}
+
+	void ManageHealth()
+	{
+		if (health >= healthmax)
+		{
+			health = healthmax;
+		} 
+		else if (health <= 0)
+		{
+			health = 0;
+			hasdied = true;
+			Invoke ("DoDeath", .5f);
+		}
+	}
+
+	void DoDeath()
 	{
 		
 	}
@@ -80,6 +101,9 @@ public class CJC_HinezController : CJC_UML {
 
 			if (furybar >= furybarmax) {
 				furybar = furybarmax;
+			} else if (furybar <= 0)
+			{
+				furybar = 0;
 			}
 
 
