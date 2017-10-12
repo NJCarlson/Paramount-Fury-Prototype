@@ -56,13 +56,16 @@
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_357bullet.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_cameraTrans.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_CheckforController.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_CollectibleItem.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_GunManager.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_HinezController.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_MeleeWeaponManager.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_MissionControl.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_mouseRotation.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_PauseManager.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_UML.cs" />
      <Compile Include="Assets\Team Members\Dustin\Health.cs" />
+     <Compile Include="Assets\Team Members\Dustin\Rotator.cs" />
      <Compile Include="Assets\Team Members\Dustin\SliderTest.cs" />
      <Compile Include="Assets\Team Members\Nick\NC_AgentTest.cs" />
      <Compile Include="Assets\Team Members\Nick\NickNavMain.cs" />
