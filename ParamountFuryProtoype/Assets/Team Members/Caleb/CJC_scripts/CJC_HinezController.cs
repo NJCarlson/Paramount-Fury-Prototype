@@ -20,6 +20,8 @@ public class CJC_HinezController : CJC_UML {
 	float exhaustiontimer;
 
 	AudioSource playersound;
+	[SerializeField]
+	AudioClip deathsound;
 
 	// Use this for initialization
 	void Start ()
@@ -65,8 +67,10 @@ public class CJC_HinezController : CJC_UML {
 		} 
 		else if (health <= 0)
 		{
+			
 			health = 0;
 			hasdied = true;
+			playersound.PlayOneShot (deathsound);
 			Invoke ("DoDeath", .5f);
 		}
 	}
@@ -74,10 +78,10 @@ public class CJC_HinezController : CJC_UML {
 	void DoDeath()
 	{
 		playerlives--;
-		hasdied = false;
 		health = healthmax;
 		staminabar = staminabarmax;
 		furybar += 75;
+		hasdied = false;
 	}
 
 	void checkspawned()
@@ -114,11 +118,16 @@ public class CJC_HinezController : CJC_UML {
 
 	void controlfury()
 	{
-		if (!furyactive) {
+		if (!furyactive)
+		{
 
-			if (furybar >= furybarmax) {
+			furybar += Time.deltaTime;
+
+			if (furybar >= furybarmax)
+			{
 				furybar = furybarmax;
-			} else if (furybar <= 0)
+			} 
+			else if (furybar <= 0)
 			{
 				furybar = 0;
 			}
