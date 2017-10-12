@@ -60,11 +60,14 @@
      <Compile Include="Assets\Team Members\Dustin\Health.cs" />
      <Compile Include="Assets\Team Members\Dustin\SliderTest.cs" />
      <Compile Include="Assets\Team Members\Nick\NC_AgentTest.cs" />
+     <Compile Include="Assets\Team Members\Nick\NickNavMain.cs" />
      <Compile Include="Assets\Team Members\Nick\NickNavNode.cs" />
      <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Graph.cs" />
      <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Node.cs" />
      <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_PathfindingTest.cs" />
      <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Search.cs" />
+     <Compile Include="Assets\Team Members\Tyler\furyDrop.cs" />
+     <Compile Include="Assets\Team Members\Tyler\healthDrop.cs" />
  <Reference Include="Facebook.Unity.Settings">
  <HintPath>C:/Users/bjchr/OneDrive/Documents/GitHub/Paramount-Fury-Prototype/ParamountFuryProtoype/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
  </Reference>

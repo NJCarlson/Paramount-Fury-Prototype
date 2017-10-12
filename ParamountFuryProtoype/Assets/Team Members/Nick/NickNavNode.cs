@@ -5,13 +5,32 @@ using UnityEngine;
 public class NickNavNode : MonoBehaviour {
 
     [SerializeField] bool blocked;
-    
-	
-	// Update is called once per frame
-	void Update () {
-        if (blocked)
-        {
-            this.GetComponent<SpriteRenderer>().color = Color.red;
-        }
-	}
+    [SerializeField] int row, column;
+    public List<Node> Neighbors = new List<Node>();
+    public Node prev = null;
+
+    // Update is called once per frame
+    //   void Update () {
+    //       if (blocked)
+    //       {
+    //           this.GetComponent<SpriteRenderer>().color = Color.red;
+    //       }
+    //}
+
+    public void Clear()
+    {
+        prev = null;
+    }
+
+    public bool GetBlocked()
+    {
+        return blocked;
+    }
+
+    public void setrowcol(int r, int c)
+    {
+        row = r;
+        column = c;
+    }
+
 }

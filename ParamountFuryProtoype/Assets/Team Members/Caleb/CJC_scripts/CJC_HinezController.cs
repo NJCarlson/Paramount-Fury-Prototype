@@ -13,33 +13,71 @@ public class CJC_HinezController : CJC_UML {
 
 	bool issprinting;
 	bool ismoving;
+	public bool hasdied;
 
 	bool isexhauseted;
 	float exhaustiontimermax = 25;
 	float exhaustiontimer;
 
+	AudioSource playersound;
+
 	// Use this for initialization
 	void Start ()
 	{
+		playersound = gameObject.GetComponent<AudioSource> ();
 		charactername = "jerry";
 		playerlives = 3;
 	}
 	
 	void Update ()
 	{
-		checkname ();
-		checkweapongun ();
-		checkmelee ();
-		checkspawned ();
-		controlmovement ();
-		controlsprint ();
-		controlexhaustion ();
-		controlfury ();
+		if (!hasdied)
+		{
+			checkname ();
+			checkweapongun ();
+			checkmelee ();
+			checkspawned ();
+			controlmovement ();
+			controlsprint ();
+			controlexhaustion ();
+			controlfury ();
+			ManageHealth ();
+		}
+
+		Managelives ();
 	}
 
 	void Managelives()
 	{
+		if (playerlives <= 0)
+		{
+			
+		}
+	}
+
+	void ManageHealth()
+	{
 		
+
+		if (health >= healthmax)
+		{
+			health = healthmax;
+		} 
+		else if (health <= 0)
+		{
+			health = 0;
+			hasdied = true;
+			Invoke ("DoDeath", .5f);
+		}
+	}
+
+	void DoDeath()
+	{
+		playerlives--;
+		hasdied = false;
+		health = healthmax;
+		staminabar = staminabarmax;
+		furybar += 75;
 	}
 
 	void checkspawned()
@@ -80,6 +118,9 @@ public class CJC_HinezController : CJC_UML {
 
 			if (furybar >= furybarmax) {
 				furybar = furybarmax;
+			} else if (furybar <= 0)
+			{
+				furybar = 0;
 			}
 
 

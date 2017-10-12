@@ -50,9 +50,10 @@ public class CJC_HudManagerP1 : MonoBehaviour {
 	{
 		GameObject jerrbear = jerryparent;
 		CJC_HinezController jerry = jerrbear.GetComponent<CJC_HinezController> ();
-
-		healthfill = jerry.health / jerry.healthmax * 1;
-		healthbar.fillAmount = healthfill;
+		if (!jerry.hasdied) {
+			healthfill = jerry.health / jerry.healthmax * 1;
+			healthbar.fillAmount = healthfill;
+		}
 	}
 
 	void updatelives()
@@ -91,16 +92,21 @@ public class CJC_HudManagerP1 : MonoBehaviour {
 		GameObject jerrbear = jerryparent;
 		CJC_HinezController jerry = jerrbear.GetComponent<CJC_HinezController> ();
 
-		furyfill = jerry.furybar / jerry.furybarmax * 1;
-		furybar.fillAmount = furyfill;
+
+		if (!jerry.hasdied)
+		{
+			furyfill = jerry.furybar / jerry.furybarmax * 1;
+			furybar.fillAmount = furyfill;
+		}
 	}
 
 	void UpdateStamin(float value)
 	{
 		GameObject jerrbear = jerryparent;
 		CJC_HinezController jerry = jerrbear.GetComponent<CJC_HinezController> ();
-
-		staminahfill = jerry.staminabar / jerry.staminabarmax * 1;
-		staminabar.fillAmount = staminahfill;
+		if (!jerry.hasdied) {
+			staminahfill = jerry.staminabar / jerry.staminabarmax * 1;
+			staminabar.fillAmount = staminahfill;
+		}
 	}
 }
