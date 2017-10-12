@@ -103,7 +103,7 @@ public class Search
 
     public Node ChosenNode()
     {
-        return reachable [ Random.Range(0,reachable.Count)];
+        return reachable [Random.Range(0,reachable.Count)];
     }
 
 
