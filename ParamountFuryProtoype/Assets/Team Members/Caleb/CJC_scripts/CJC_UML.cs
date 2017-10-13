@@ -100,7 +100,7 @@ public class CJC_UML : MonoBehaviour {
 		if (gunname == "357magnum")
 		{
 			gunfirerate = .33f;
-			gundamage = 175;
+			gundamage = 125;
 		}
 		else if (gunname == "shotgun")
 		{
@@ -124,7 +124,7 @@ public class CJC_UML : MonoBehaviour {
 		if (gunname == "wrench")
 		{
 			meleeattackspeed = 1;
-			meleedamage = 175;
+			meleedamage = 90;
 		}
 		else if (gunname == "brass")
 		{

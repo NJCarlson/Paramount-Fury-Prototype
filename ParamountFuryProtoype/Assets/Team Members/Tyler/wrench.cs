@@ -6,6 +6,9 @@ using System.Globalization;
 
 public class wrench: MonoBehaviour {
 
+	[SerializeField]
+	GameObject playerparent;
+
 
 	// Use this for initialization
 	void Start () {
@@ -19,11 +22,15 @@ public class wrench: MonoBehaviour {
 	}
     void OnTriggerEnter(Collider other)
     { 
+		GameObject jerrbear = playerparent;
+		CJC_HinezController jerry = jerrbear.GetComponent<CJC_HinezController> ();
+
         if (other.tag == "enemy")
         {
             GameObject target = other.gameObject;
             Dummy dummyStats = target.GetComponent<Dummy>();
-            dummyStats.health -= 50;
+			jerry.furybar += jerry.meleedamage / 20;
+			dummyStats.health -= jerry.meleedamage;
         }
     }
 

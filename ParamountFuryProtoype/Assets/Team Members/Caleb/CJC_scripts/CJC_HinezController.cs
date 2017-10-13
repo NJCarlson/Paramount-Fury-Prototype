@@ -24,6 +24,11 @@ public class CJC_HinezController : CJC_UML {
 	AudioSource playersound;
 	[SerializeField]
 	AudioClip deathsound;
+	[SerializeField]
+	AudioClip ouch;
+
+	float damagetimer;
+	bool gothit;
 
 	// Use this for initialization
 	void Start ()
@@ -32,11 +37,42 @@ public class CJC_HinezController : CJC_UML {
 		charactername = "jerry";
 		playerlives = 3;
 	}
+
+	void refreshdamage()
+	{
+		if (gothit)
+		{
+			damagetimer += Time.deltaTime;
+
+			if (damagetimer >= 1)
+			{
+				damagetimer = 0;
+				gothit = false;
+			}
+		}
+	}
+
+	void OnTriggerStay(Collider other)
+	{
+		if (other.tag == "enemy" && !gothit)
+		{
+			playersound.PlayOneShot (ouch);
+			furybar += 2.5f;
+			if (!furyactive) {
+				health -= 20;
+			} else if (furyactive)
+			{
+				health -= 10;
+			}
+			gothit = true;
+		}
+	}
 	
 	void Update ()
 	{
 		if (!hasdied)
 		{
+			refreshdamage ();
 			checkname ();
 			checkweapongun ();
 			checkmelee ();
@@ -144,6 +180,7 @@ public class CJC_HinezController : CJC_UML {
 		else if (furyactive)
 		{
 			furybar -= Time.deltaTime*10;
+			health += Time.deltaTime * 2.5f;
 
 			if (furybar <= 0)
 			{
@@ -231,7 +268,7 @@ public class CJC_HinezController : CJC_UML {
 		if (gunname == "357magnum")
 		{
 			gunfirerate = .33f;
-			gundamage = 175;
+			gundamage = 125;
 		}
 	}
 
@@ -240,7 +277,7 @@ public class CJC_HinezController : CJC_UML {
 		if (meleeweapon == "wrench")
 		{
 			meleeattackspeed = 1;
-			meleedamage = 175;
+			meleedamage = 90;
 		}
 	}
 }

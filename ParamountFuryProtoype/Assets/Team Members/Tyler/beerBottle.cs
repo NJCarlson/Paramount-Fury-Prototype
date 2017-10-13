@@ -75,6 +75,9 @@ public class beerBottle: MonoBehaviour {
 		}
 		else if (other.name == "enemy" && thrown && !broken)
 		{
+			GameObject target = other.gameObject;
+			Dummy dummyStats = target.GetComponent<Dummy>();
+			dummyStats.health -= 50;
 			speed = 0;
 			GetComponent<BoxCollider> ().enabled = false;
 			GetComponent<SpriteRenderer> ().enabled = false;
