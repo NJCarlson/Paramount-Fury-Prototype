@@ -85,14 +85,18 @@
     <Compile Include="Assets\Team Members\Caleb\CJC_HudManagerP1.cs" />
     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_357bullet.cs" />
     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_CheckforController.cs" />
+    <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_CollectibleItem.cs" />
     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_GunManager.cs" />
     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_HinezController.cs" />
     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_MeleeWeaponManager.cs" />
+    <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_MissionControl.cs" />
     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_PauseManager.cs" />
+    <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_ShowMissions.cs" />
     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_UML.cs" />
     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_cameraTrans.cs" />
     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_mouseRotation.cs" />
     <Compile Include="Assets\Team Members\Dustin\Health.cs" />
+    <Compile Include="Assets\Team Members\Dustin\Rotator.cs" />
     <Compile Include="Assets\Team Members\Dustin\SliderTest.cs" />
     <Compile Include="Assets\Team Members\Nick\NC_AgentTest.cs" />
     <Compile Include="Assets\Team Members\Nick\NickNavMain.cs" />
@@ -101,6 +105,7 @@
     <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Node.cs" />
     <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_PathfindingTest.cs" />
     <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Search.cs" />
+    <Compile Include="Assets\Team Members\Tyler\beerBottle.cs" />
     <Compile Include="Assets\Team Members\Tyler\furyDrop.cs" />
     <Compile Include="Assets\Team Members\Tyler\healthDrop.cs" />
   </ItemGroup>
