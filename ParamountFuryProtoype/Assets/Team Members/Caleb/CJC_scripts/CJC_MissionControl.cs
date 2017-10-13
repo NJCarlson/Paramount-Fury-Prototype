@@ -13,7 +13,7 @@ public class CJC_MissionControl : MonoBehaviour {
 	public bool MissionChosen;
 
 	public int PrizedCollectiblesCUR;
-	int PrizedCollectiblesMAX;
+	public int PrizedCollectiblesMAX;
 
 	public int KillCountCUR;
 	public int KillCountMAX;
@@ -24,6 +24,7 @@ public class CJC_MissionControl : MonoBehaviour {
 	public bool HVTkilled;
 
 	public int missionsCompleted;
+	public int missionsRequired;
 	public bool missioncompleted;
 
 
@@ -39,22 +40,23 @@ public class CJC_MissionControl : MonoBehaviour {
 		ChooseMission ();
 		checkforMissionComplete ();
 
-		if (missionName == "Body Count")
-		{
-			BodyCountMission ();
-		} 
-		else if (missionName == "Prized Posessions")
-		{
-			PrizedPosessionMission ();
-		} 
-		else if (missionName == "Send A Message")
-		{
-			SendAMessageMission ();
-		} 
-		else if (missionName == "High Value Target")
-		{
-			HVTMission ();
-		}
+	
+			if (missionName == "Body Count")
+			{
+				BodyCountMission ();
+			} 
+			else if (missionName == "Prized Posessions")
+			{
+				PrizedPosessionMission ();
+			} 
+			else if (missionName == "Send A Message")
+			{
+				SendAMessageMission ();
+			} 
+			else if (missionName == "High Value Target")
+			{
+				HVTMission ();
+			}
 	}
 
 	void ChooseMission()
@@ -88,7 +90,15 @@ public class CJC_MissionControl : MonoBehaviour {
 
 	void checkforMissionComplete()
 	{
-		
+		missionsRequired = 1;
+
+
+
+		if (missionsCompleted >= 1)
+		{
+			missioncompleted = true;
+			print ("mission complete");
+		}
 	}
 
 	void BodyCountMission()
@@ -96,29 +106,89 @@ public class CJC_MissionControl : MonoBehaviour {
 		print ("body count mission active");
 		KillCountMAX = 25;
 
+		if (KillCountCUR >= KillCountMAX)
+		{
+			KillCountCUR = KillCountMAX;
+		}
+		else if (KillCountCUR < 0)
+		{
+			KillCountCUR = 0;
+		}
+
 
 		if (!missioncompleted)
 		{
 
-			if (KillCountCUR == KillCountMAX)
+			if (KillCountCUR >= KillCountMAX)
 			{
 				missionsCompleted += 1;
+				KillCountCUR = KillCountMAX;
 			}
 		}
+
+
 	}
 
 	void PrizedPosessionMission()
 	{
 		print ("prized posession mission active");
+		PrizedCollectiblesMAX = 3;
+
+		if (PrizedCollectiblesCUR >= PrizedCollectiblesMAX)
+		{
+			PrizedCollectiblesCUR = PrizedCollectiblesMAX;
+		}
+		else if (PrizedCollectiblesCUR < 0)
+		{
+			PrizedCollectiblesCUR = 0;
+		}
+
+
+		if (!missioncompleted)
+		{
+
+			if (PrizedCollectiblesCUR >= PrizedCollectiblesMAX)
+			{
+				missionsCompleted += 1;
+				PrizedCollectiblesCUR = PrizedCollectiblesMAX;
+			}
+		}
 	}
 
 	void SendAMessageMission()
 	{
 		print ("send a message mission active");
+		MessagesSentMAX = 10;
+
+		if (MessagesSentCUR >= MessagesSentMAX)
+		{
+			MessagesSentCUR = MessagesSentMAX;
+		}
+		else if (MessagesSentCUR < 0)
+		{
+			MessagesSentCUR = 0;
+		}
+
+
+		if (!missioncompleted)
+		{
+
+			if (MessagesSentCUR >= MessagesSentMAX)
+			{
+				missionsCompleted += 1;
+				MessagesSentCUR = MessagesSentMAX;
+			}
+		}
 	}
 
 	void HVTMission()
 	{
 		print ("HVT mission active");
+		if (!missioncompleted) {
+			if (HVTkilled) {
+				missionsCompleted += 1;
+			}
+		}
+
 	}
 }
