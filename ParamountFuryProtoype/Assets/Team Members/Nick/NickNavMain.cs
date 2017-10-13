@@ -2,25 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class NickNavMain : MonoBehaviour {
 
-    [SerializeField] GameObject Mapgroup;
-    [SerializeField] List<GameObject> MapgroupRows;
+public class NickNavMain : MonoBehaviour
+{
+
+    [SerializeField] List<GameObject> MapgroupRows = new List<GameObject>();
     [SerializeField] int columns, rows;
     [SerializeField] int[,] MAP;
+
+    NickNavGraph graph;
+    NickNavSearch Search;
  
-	// Use this for initialization
-	void Start () {
 
-      MAP = Buildmap();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 
-	}
+    public List<NickNavNode> Findpath(NickNavNode start, NickNavNode End)
+    {
+        MAP = Buildmap();
+        graph  = new NickNavGraph(MAP);
+        Search = new NickNavSearch(graph);
+       
+        
+        Search.Start(graph.nodes[start.graphindex], graph.nodes[End.graphindex]);
+
+        while (!Search.finished)
+        {
+            Search.Step();
+        }
+       
+        print("Search done, Path Length" + Search.path.Count + " Iterations" + Search.iterations);
+
+        return Search.path;
+    }
+
 
     int[,] Buildmap()
     {
@@ -39,12 +52,9 @@ public class NickNavMain : MonoBehaviour {
                 else
                 {
                     map[i, j] = 0;
-                }
-
-                Nodes[j].setrowcol(i, j);
+                }              
             }
         }
-
         return map;
     }
 
@@ -52,28 +62,31 @@ public class NickNavMain : MonoBehaviour {
 
 public class NickNavSearch
 {
-    public Graph graph;
-    public List<Node> reachable;
-    public List<Node> explored;
-    public List<Node> path;
-    public Node goalNode;
+    public NickNavGraph graph;
+    public List<NickNavNode> reachable;
+    public List<NickNavNode> explored;
+    public List<NickNavNode> path;
+    public NickNavNode goalNode;
+    public NickNavNode startNode;
+   
     public int iterations;
     public bool finished;
 
-    public NickNavSearch(Graph graph)
+    public NickNavSearch(NickNavGraph graph)
     {
         this.graph = graph;
     }
 
-    public void Start(Node start, Node goal)
+    public void Start(NickNavNode start, NickNavNode goal)
     {
-        reachable = new List<Node>();
+        reachable = new List<NickNavNode>();
         reachable.Add(start);
 
         goalNode = goal;
+        startNode = start;
 
-        explored = new List<Node>();
-        path = new List<Node>();
+        explored = new List<NickNavNode>();
+        path = new List<NickNavNode>();
         iterations = 0;
 
         for (int i = 0; i < graph.nodes.Length; i++)
@@ -95,17 +108,27 @@ public class NickNavSearch
             finished = true;
             return;
         }
+
         iterations++;
-        Node node = ChosenNode();
-        if (node == goalNode)
+        NickNavNode node = ChosenNode();   
+        
+        
+        if (node.graphindex == goalNode.graphindex)
         {
-            while (node != null)
+            while (true)
             {
-                path.Insert(0, node);
-                node = node.prev;
+                if (node.graphindex == startNode.graphindex )
+                {
+                    finished = true;
+                    return;
+                }
+                else
+                {
+                    path.Insert(0, node);
+                    node = node.prev;  
+                }
             }
-            finished = true;
-            return;
+          
 
         }
 
@@ -119,7 +142,7 @@ public class NickNavSearch
 
     }
 
-    public void AddAdjasent(Node node, Node Adjacent)
+    public void AddAdjasent(NickNavNode node, NickNavNode Adjacent)
     {
         if (FindNode(Adjacent, explored) || FindNode(Adjacent, reachable))
         {
@@ -131,16 +154,16 @@ public class NickNavSearch
 
     }
 
-    public bool FindNode(Node node, List<Node> list)
+    public bool FindNode(NickNavNode node, List<NickNavNode> list)
     {
         return GetNodeIndex(node, list) >= 0;
     }
 
-    public int GetNodeIndex(Node node, List<Node> list)
+    public int GetNodeIndex(NickNavNode node, List<NickNavNode> list)
     {
         for (int i = 0; i < list.Count; i++)
         {
-            if (node == list[i])
+            if (node.graphindex == list[i].graphindex)
             {
                 return i;
             }
@@ -149,35 +172,38 @@ public class NickNavSearch
     }
 
 
-    public Node ChosenNode()
+    public NickNavNode ChosenNode()
     {
-        return reachable[Random.Range(0, reachable.Count)];
+        return reachable[0];
     }
 }
 
 public class NickNavGraph
 {
     public int rows = 0, columns = 0;
-    public Node[] nodes;
+    public NickNavNode[] nodes;
 
     public NickNavGraph(int[,] grid)
     {
         rows = grid.GetLength(0);
         columns = grid.GetLength(1);
 
-        nodes = new Node[grid.Length];
+        nodes = new NickNavNode[grid.Length + 1];
         for (int i = 0; i < nodes.Length; i++)
         {
-            var node = new Node();
-            node.label = i.ToString();
+            NickNavNode node = new NickNavNode();
+            node.graphindex = i;
             nodes[i] = node;
         }
+        NickNavNode lastnode = new NickNavNode();
+        lastnode.graphindex = int.MaxValue;
+        nodes[nodes.Length - 1] = lastnode;
 
         for (int r = 0; r < rows; r++)
         {
             for (int c = 0; c < columns; c++)
             {
-                var node = nodes[columns * r + c];
+                NickNavNode node = nodes[columns * r + c];
                 if (grid[r, c] == 1)
                 {
                     continue;

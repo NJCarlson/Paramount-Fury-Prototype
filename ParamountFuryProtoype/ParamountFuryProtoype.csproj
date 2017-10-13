@@ -96,7 +96,9 @@
     <Compile Include="Assets\Team Members\Dustin\SliderTest.cs" />
     <Compile Include="Assets\Team Members\Nick\NC_AgentTest.cs" />
     <Compile Include="Assets\Team Members\Nick\NickNavMain.cs" />
+    <Compile Include="Assets\Team Members\Nick\NickNavMapgroup.cs" />
     <Compile Include="Assets\Team Members\Nick\NickNavNode.cs" />
+    <Compile Include="Assets\Team Members\Nick\NickNavTestAgent.cs" />
     <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Graph.cs" />
     <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Node.cs" />
     <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_PathfindingTest.cs" />
