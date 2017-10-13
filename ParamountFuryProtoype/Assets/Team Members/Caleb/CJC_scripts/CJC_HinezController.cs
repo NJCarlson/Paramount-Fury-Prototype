@@ -9,37 +9,81 @@ public class CJC_HinezController : CJC_UML {
 	public Vector3 movedirection = Vector3.zero;
 	public CharacterController controller;
 
+	public bool throwableheld;
+
 	public bool furyactive;
 
 	bool issprinting;
 	bool ismoving;
+	public bool hasdied;
 
 	bool isexhauseted;
 	float exhaustiontimermax = 25;
 	float exhaustiontimer;
 
+	AudioSource playersound;
+	[SerializeField]
+	AudioClip deathsound;
+
 	// Use this for initialization
 	void Start ()
 	{
+		playersound = gameObject.GetComponent<AudioSource> ();
 		charactername = "jerry";
 		playerlives = 3;
 	}
 	
 	void Update ()
 	{
-		checkname ();
-		checkweapongun ();
-		checkmelee ();
-		checkspawned ();
-		controlmovement ();
-		controlsprint ();
-		controlexhaustion ();
-		controlfury ();
+		if (!hasdied)
+		{
+			checkname ();
+			checkweapongun ();
+			checkmelee ();
+			checkspawned ();
+			controlmovement ();
+			controlsprint ();
+			controlexhaustion ();
+			controlfury ();
+			ManageHealth ();
+		}
+
+		Managelives ();
 	}
 
 	void Managelives()
 	{
+		if (playerlives <= 0)
+		{
+			
+		}
+	}
+
+	void ManageHealth()
+	{
 		
+
+		if (health >= healthmax)
+		{
+			health = healthmax;
+		} 
+		else if (health <= 0)
+		{
+			
+			health = 0;
+			hasdied = true;
+			playersound.PlayOneShot (deathsound);
+			Invoke ("DoDeath", .5f);
+		}
+	}
+
+	void DoDeath()
+	{
+		playerlives--;
+		health = healthmax;
+		staminabar = staminabarmax;
+		furybar += 75;
+		hasdied = false;
 	}
 
 	void checkspawned()
@@ -76,10 +120,18 @@ public class CJC_HinezController : CJC_UML {
 
 	void controlfury()
 	{
-		if (!furyactive) {
+		if (!furyactive)
+		{
 
-			if (furybar >= furybarmax) {
+			furybar += Time.deltaTime;
+
+			if (furybar >= furybarmax)
+			{
 				furybar = furybarmax;
+			} 
+			else if (furybar <= 0)
+			{
+				furybar = 0;
 			}
 
 

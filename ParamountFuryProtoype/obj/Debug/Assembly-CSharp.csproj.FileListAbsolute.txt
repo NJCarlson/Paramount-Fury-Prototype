@@ -8,7 +8,6 @@ C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFu
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.HoloLens.dll
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.Networking.dll
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.TestRunner.dll
-C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.Timeline.dll
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.UI.dll
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\Mono.Cecil.dll
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\Unity.SerializationLogic.dll
@@ -25,9 +24,10 @@ C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFu
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.Networking.xml
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.TestRunner.xml
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\nunit.framework.xml
-C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.Timeline.xml
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.Analytics.xml
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.HoloLens.xml
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\obj\Debug\Assembly-CSharp.dll
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\obj\Debug\Assembly-CSharp.pdb
+C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.Timeline.dll
+C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.Timeline.xml

@@ -6,6 +6,8 @@ using System.Globalization;
 
 public class furyDrop: MonoBehaviour {
 
+	public float furyamount = 5;
+
 
 	// Use this for initialization
 	void Start () {
@@ -24,7 +26,7 @@ public class furyDrop: MonoBehaviour {
             CJC_HinezController player = other.GetComponent<CJC_HinezController>();
             if (player != null && player.furybar < 100)
             {
-                player.furybar += 5;
+				player.furybar += furyamount;
                 Destroy(gameObject, .1f);
             }
         }
