@@ -9,6 +9,8 @@ public class CJC_HinezController : CJC_UML {
 	public Vector3 movedirection = Vector3.zero;
 	public CharacterController controller;
 
+	public bool throwableheld;
+
 	public bool furyactive;
 
 	bool issprinting;
