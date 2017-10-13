@@ -36,7 +36,7 @@ public class beerBottle: MonoBehaviour {
 	}
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.name == "character")
         {
 			transform.parent = other.transform;
 			held = true;
