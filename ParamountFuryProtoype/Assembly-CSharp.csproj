@@ -63,6 +63,7 @@
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_MissionControl.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_mouseRotation.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_PauseManager.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_ShowMissions.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_UML.cs" />
      <Compile Include="Assets\Team Members\Dustin\Health.cs" />
      <Compile Include="Assets\Team Members\Dustin\Rotator.cs" />

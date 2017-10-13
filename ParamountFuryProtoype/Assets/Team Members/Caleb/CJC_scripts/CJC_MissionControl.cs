@@ -16,10 +16,10 @@ public class CJC_MissionControl : MonoBehaviour {
 	int PrizedCollectiblesMAX;
 
 	public int KillCountCUR;
-	int KillCountMAX;
+	public int KillCountMAX;
 
 	public int MessagesSentCUR;
-	int MessagesSentMAX;
+	public int MessagesSentMAX;
 
 	public bool HVTkilled;
 
@@ -95,6 +95,7 @@ public class CJC_MissionControl : MonoBehaviour {
 	{
 		print ("body count mission active");
 		KillCountMAX = 25;
+
 
 		if (!missioncompleted)
 		{
