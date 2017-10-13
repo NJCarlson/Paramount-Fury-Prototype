@@ -8,10 +8,7 @@
       <File FileName="Assets\Team Members\Caleb\CJC_scripts\CJC_MeleeWeaponManager.cs" Line="1" Column="1" />
       <File FileName="Assets\Team Members\Caleb\CJC_scripts\CJC_mouseRotation.cs" Line="1" Column="1" />
       <File FileName="Assets\Team Members\Caleb\CJC_HudManagerP1.cs" Line="1" Column="1" />
-      <File FileName="Assets\Team Members\Tyler\furyDrop.cs" Line="1" Column="1" />
-      <File FileName="Assets\Team Members\Tyler\healthDrop.cs" Line="29" Column="34" />
-      <File FileName="Assets\Team Members\Caleb\CJC_scripts\CJC_CollectibleItem.cs" Line="21" Column="25" />
-      <File FileName="Assets\Team Members\Caleb\CJC_scripts\CJC_MissionControl.cs" Line="49" Column="35" />
+      <File FileName="Assets\Team Members\Caleb\CJC_scripts\CJC_MissionControl.cs" Line="40" Column="30" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

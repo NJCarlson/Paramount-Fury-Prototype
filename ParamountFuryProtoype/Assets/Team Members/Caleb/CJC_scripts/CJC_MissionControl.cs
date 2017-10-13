@@ -12,14 +12,49 @@ public class CJC_MissionControl : MonoBehaviour {
 
 	public bool MissionChosen;
 
+	public int PrizedCollectiblesCUR;
+	int PrizedCollectiblesMAX;
+
+	public int KillCountCUR;
+	int KillCountMAX;
+
+	public int MessagesSentCUR;
+	int MessagesSentMAX;
+
+	public bool HVTkilled;
+
+	public int missionsCompleted;
+	public bool missioncompleted;
+
+
+
 	// Use this for initialization
 	void Start () {
 		
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 		ChooseMission ();
+		checkforMissionComplete ();
+
+		if (missionName == "Body Count")
+		{
+			BodyCountMission ();
+		} 
+		else if (missionName == "Prized Posessions")
+		{
+			PrizedPosessionMission ();
+		} 
+		else if (missionName == "Send A Message")
+		{
+			SendAMessageMission ();
+		} 
+		else if (missionName == "High Value Target")
+		{
+			HVTMission ();
+		}
 	}
 
 	void ChooseMission()
@@ -48,8 +83,41 @@ public class CJC_MissionControl : MonoBehaviour {
 			{
 				missionName = missiontypes [3];
 			}
-
-			print ("Mission number selected is" + missionnumber);
 		}
+	}
+
+	void checkforMissionComplete()
+	{
+		
+	}
+
+	void BodyCountMission()
+	{
+		print ("body count mission active");
+		KillCountMAX = 25;
+
+		if (!missioncompleted)
+		{
+
+			if (KillCountCUR == KillCountMAX)
+			{
+				missionsCompleted += 1;
+			}
+		}
+	}
+
+	void PrizedPosessionMission()
+	{
+		print ("prized posession mission active");
+	}
+
+	void SendAMessageMission()
+	{
+		print ("send a message mission active");
+	}
+
+	void HVTMission()
+	{
+		print ("HVT mission active");
 	}
 }
