@@ -5,18 +5,30 @@ using UnityEngine;
 public class NickNavNode : MonoBehaviour {
 
     [SerializeField] bool blocked;
-    [SerializeField] int row, column;
-    public List<Node> Neighbors = new List<Node>();
-    public Node prev = null;
+    public int graphindex;
+    public List<NickNavNode> Neighbors= new List<NickNavNode>();
+    public NickNavNode prev = null;
 
-    // Update is called once per frame
-    //   void Update () {
-    //       if (blocked)
-    //       {
-    //           this.GetComponent<SpriteRenderer>().color = Color.red;
-    //       }
-    //}
+   // Update is called once per frame
+    void Start()
+    {
+        if (blocked)
+        {
+            this.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+    }
 
+    public int GetGraphIndex()
+    {
+
+        return graphindex;
+    }
+
+    public Vector3 GetCoordinates()
+    {
+        return transform.position;
+    }
+    
     public void Clear()
     {
         prev = null;
@@ -27,10 +39,5 @@ public class NickNavNode : MonoBehaviour {
         return blocked;
     }
 
-    public void setrowcol(int r, int c)
-    {
-        row = r;
-        column = c;
-    }
 
 }
