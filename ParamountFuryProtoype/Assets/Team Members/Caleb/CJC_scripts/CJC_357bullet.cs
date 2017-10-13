@@ -45,9 +45,12 @@ public class CJC_357bullet : MonoBehaviour {
 		}
 		else if (other.tag == "enemy")
 		{
-			GetComponent<SpriteRenderer> ().enabled = false;
-			GetComponent<BoxCollider> ().enabled = false;
-			Destroy (gameObject, .1f);
+            GameObject target = other.gameObject;
+	    	Dummy dummyStats = target.GetComponent<Dummy> ();
+            dummyStats.health -= 50;
+			//GetComponent<SpriteRenderer> ().enabled = false;
+			//GetComponent<BoxCollider> ().enabled = false;
+			Destroy (gameObject, 0f);
 		}
 	}
 }
