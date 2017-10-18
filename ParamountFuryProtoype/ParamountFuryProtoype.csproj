@@ -107,9 +107,11 @@
     <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Node.cs" />
     <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_PathfindingTest.cs" />
     <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Search.cs" />
+    <Compile Include="Assets\Team Members\Tyler\Dummy.cs" />
     <Compile Include="Assets\Team Members\Tyler\beerBottle.cs" />
     <Compile Include="Assets\Team Members\Tyler\furyDrop.cs" />
     <Compile Include="Assets\Team Members\Tyler\healthDrop.cs" />
+    <Compile Include="Assets\Team Members\Tyler\wrench.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
