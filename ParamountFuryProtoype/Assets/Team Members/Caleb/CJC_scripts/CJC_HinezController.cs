@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class CJC_HinezController : CJC_UML {
 
@@ -111,7 +111,7 @@ public class CJC_HinezController : CJC_UML {
 
 	public void TransitionToHub()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene (5);
+		SceneManager.LoadScene (5);
 	}
 
 	void Managelives()

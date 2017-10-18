@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor.SceneManagement;
+using UnityEngine.SceneManagement;
 
 public class CJC_PauseButtonControls : MonoBehaviour {
 
@@ -27,12 +27,12 @@ public class CJC_PauseButtonControls : MonoBehaviour {
 
 	public void ReturnToHub()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene (5);
+		SceneManager.LoadScene (5);
 		CJC_PauseManager.gamepaused = false;
 	}
 	public void ReturnToMainMenu()
 	{
-		UnityEngine.SceneManagement.SceneManager.LoadScene (0);
+		SceneManager.LoadScene (0);
 		CJC_PauseManager.gamepaused = false;
 	}
 
