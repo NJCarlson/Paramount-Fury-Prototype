@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Team Members/Caleb/CalebTest.unity
+- path: Assets/Build Scenes/HubWorld.unity
   isLoaded: 1
   isActive: 1
