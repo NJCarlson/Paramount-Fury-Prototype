@@ -51,17 +51,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\Controls_menu.cs" />
+     <Compile Include="Assets\Scripts\Credit_menu.cs" />
      <Compile Include="Assets\Scripts\NC_MenuManager.cs" />
-     <Compile Include="Assets\Team Members\Caleb\CJC_HudManagerP1.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_InGameXboxUISelector.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_357bullet.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_cameraTrans.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_CheckforController.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_CollectibleItem.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_GunManager.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_HinezController.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_HudManagerP1.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_MeleeWeaponManager.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_MissionControl.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_mouseRotation.cs" />
+     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_PauseButtonControls.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_PauseManager.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_ShowMissions.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_UML.cs" />
@@ -96,9 +100,6 @@
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
- </Reference>
- <Reference Include="UnityEngine.Timeline">
- <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
