@@ -20,18 +20,16 @@ public class CJC_CollectibleItem : MonoBehaviour {
 		GameObject jerrbear = GameObject.FindWithTag ("GameController");
 		CJC_MissionControl jerry = jerrbear.GetComponent<CJC_MissionControl> ();
 
-
-		if (jerry.missionName != ("Prized Posessions"))
-			{
+		if (jerry.CurrentLevel != "Tutorial") {
+			if (jerry.missionName != ("Prized Posessions")) {
 				timer += Time.deltaTime;
 			}
 
-		if (timer > 1)
-		{
+			if (timer > 1) {
 			
-			Destroy (gameObject, 0);
+				Destroy (gameObject, 0);
+			}
 		}
-
 	}
 
 	void OnTriggerEnter(Collider other)

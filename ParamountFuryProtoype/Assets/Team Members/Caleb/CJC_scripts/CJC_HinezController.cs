@@ -80,6 +80,7 @@ public class CJC_HinezController : CJC_UML {
 		GameObject pitbull = GameObject.FindWithTag("GameController");
 		CJC_MissionControl mr305 = pitbull.GetComponent<CJC_MissionControl> ();
 
+
 		if (!hasdied && !mr305.missioncompleted)
 		{
 			refreshdamage ();

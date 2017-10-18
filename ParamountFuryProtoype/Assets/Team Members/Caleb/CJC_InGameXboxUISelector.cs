@@ -33,6 +33,7 @@ public class CJC_InGameXboxUISelector : MonoBehaviour {
 // Use this for initialization
 void Start () 
 {
+		//Time.timeScale = 1;
 	SelectedUI = 0;
 	SelectedUIScenes = 0;
 }
@@ -240,6 +241,8 @@ void ManageButtonAction()
 			else if (SelectedUI == 1)
 			{
 				//GetComponent<AudioSource> ().PlayOneShot (buttonpressed);
+				CJC_PauseManager.gamepaused = false;
+				Time.timeScale = 1;
 				UnityEngine.SceneManagement.SceneManager.LoadScene(selectableUIScenes[1]);
 				//core1.paused = false;
 				//hastoshowcontrols = true;
@@ -248,6 +251,8 @@ void ManageButtonAction()
 			else if (SelectedUI == 2)
 			{
 				//GetComponent<AudioSource> ().PlayOneShot (buttonpressed);
+				CJC_PauseManager.gamepaused = false;
+				Time.timeScale = 1;
 				UnityEngine.SceneManagement.SceneManager.LoadScene(selectableUIScenes[2]);
 				//core1.paused = false;
 				//hastoshowcontrols = true;

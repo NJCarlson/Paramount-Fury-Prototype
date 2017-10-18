@@ -27,36 +27,41 @@ public class CJC_MissionControl : MonoBehaviour {
 	public int missionsRequired;
 	public bool missioncompleted;
 
+	public string CurrentLevel;
+
 
 
 	// Use this for initialization
-	void Start () {
-		
+	void Start ()
+	{
+		Time.timeScale = 1;
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		ChooseMission ();
-		checkforMissionComplete ();
+		if (CurrentLevel != "Tutorial")
+		{
+
+			ChooseMission ();
+			checkforMissionComplete ();
 
 	
 			if (missionName == "Body Count")
 			{
 				BodyCountMission ();
-			} 
-			else if (missionName == "Prized Posessions")
+			} else if (missionName == "Prized Posessions")
 			{
 				PrizedPosessionMission ();
-			} 
-			else if (missionName == "Send A Message")
+			} else if (missionName == "Send A Message")
 			{
 				SendAMessageMission ();
-			} 
+			}
 			else if (missionName == "High Value Target")
 			{
 				HVTMission ();
 			}
+		}
 	}
 
 	void ChooseMission()
