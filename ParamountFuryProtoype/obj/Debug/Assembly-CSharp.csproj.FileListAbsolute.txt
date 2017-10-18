@@ -29,5 +29,3 @@ C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFu
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\obj\Debug\Assembly-CSharp.dll
 C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\obj\Debug\Assembly-CSharp.pdb
-C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.Timeline.dll
-C:\Users\caleb christerson\Documents\GitHub\Paramount-Fury-Prototype\ParamountFuryProtoype\Temp\bin\Debug\UnityEngine.Timeline.xml
