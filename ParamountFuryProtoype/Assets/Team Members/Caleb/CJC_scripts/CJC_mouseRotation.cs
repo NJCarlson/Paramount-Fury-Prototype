@@ -11,17 +11,24 @@ public class CJC_mouseRotation : MonoBehaviour {
 	[SerializeField]
 	float testangle = 89.55f;
 
-	void Update () 
+	void Update ()
 	{
-		IfControllerPluggedIn ();
-		IfControllerNotPluggedIn ();
+		GameObject pitbull = GameObject.FindWithTag("GameController");
+		CJC_MissionControl mr305 = pitbull.GetComponent<CJC_MissionControl> ();
+
+		if (!mr305.missioncompleted) {
+
+			if (CJC_CheckforController.controlleractive) {
+				IfControllerPluggedIn ();
+			} else if (!CJC_CheckforController.controlleractive) {
+				IfControllerNotPluggedIn ();
+			}
+		}
 	}
 
 	void IfControllerPluggedIn()
 	{
-		if (CJC_CheckforController.controlleractive)
-		{
-
+		Cursor.visible = false;
 			float rx = Input.GetAxis ("360_RightStickH");
 			float rY = Input.GetAxis ("360_RightStickV");
 
@@ -38,13 +45,12 @@ public class CJC_mouseRotation : MonoBehaviour {
 			//transform.rotation = Quaternion.LookRotation (shootDirection, Vector3.up);
 
 			//transform.rotation = Quaternion.Euler (new Vector3 (0f, 0f, -Input.GetAxis("360_RightStick")* Time.deltaTime* 1000));
-		}
+
 
 	}
 
 	void IfControllerNotPluggedIn()
 	{
-		if (!CJC_CheckforController.controlleractive) {
 			Cursor.visible = true;
 			//Get the Screen positions of the object
 			Vector2 positionOnScreen = Camera.main.WorldToViewportPoint (transform.position);
@@ -57,12 +63,8 @@ public class CJC_mouseRotation : MonoBehaviour {
 
 			//Ta Daaa
 			transform.rotation = Quaternion.Euler (new Vector3 (0f, 0f, angle));
-		}
 
-		if (CJC_CheckforController.controlleractive)
-		{
-			Cursor.visible = false;
-		}
+
 	}
 
 	float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
