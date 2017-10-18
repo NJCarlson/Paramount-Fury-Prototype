@@ -13,11 +13,12 @@ public class CJC_CheckforController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		TestForController ();
 	}
 
 	void TestForController()
-	{
+	{	
 		string[] temp = Input.GetJoystickNames ();
 
 		if (temp.Length > 0)

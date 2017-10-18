@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.SceneManagement;
 
 public class CJC_HinezController : CJC_UML {
 
@@ -30,9 +31,15 @@ public class CJC_HinezController : CJC_UML {
 	float damagetimer;
 	bool gothit;
 
+	public Animator corecharacteranim;
+	[SerializeField]
+	GameObject completiontext;
+
+
 	// Use this for initialization
 	void Start ()
 	{
+		corecharacteranim = gameObject.GetComponent<Animator> ();
 		playersound = gameObject.GetComponent<AudioSource> ();
 		charactername = "jerry";
 		playerlives = 3;
@@ -70,7 +77,10 @@ public class CJC_HinezController : CJC_UML {
 	
 	void Update ()
 	{
-		if (!hasdied)
+		GameObject pitbull = GameObject.FindWithTag("GameController");
+		CJC_MissionControl mr305 = pitbull.GetComponent<CJC_MissionControl> ();
+
+		if (!hasdied && !mr305.missioncompleted)
 		{
 			refreshdamage ();
 			checkname ();
@@ -85,6 +95,23 @@ public class CJC_HinezController : CJC_UML {
 		}
 
 		Managelives ();
+		CheckForMissioncomplete ();
+	}
+
+	void CheckForMissioncomplete()
+	{
+		GameObject pitbull = GameObject.FindWithTag("GameController");
+		CJC_MissionControl mr305 = pitbull.GetComponent<CJC_MissionControl> ();
+
+		if (mr305.missioncompleted)
+		{
+			corecharacteranim.SetBool ("MissionCompleted", true);
+		}
+	}
+
+	public void TransitionToHub()
+	{
+		UnityEngine.SceneManagement.SceneManager.LoadScene (5);
 	}
 
 	void Managelives()
