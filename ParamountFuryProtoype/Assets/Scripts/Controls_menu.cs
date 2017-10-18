@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class NC_MenuManager : MonoBehaviour {
+public class Controls_menu : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -14,13 +14,7 @@ public class NC_MenuManager : MonoBehaviour {
 	void Update () {
 		
 	}
-
-    public void Exitbutton()
-    {
-        Application.Quit();
-    }
-
-    public void SceneSelect(string scene)
+    public void Return(string scene)
     {
         SceneManager.LoadScene(scene);
     }
