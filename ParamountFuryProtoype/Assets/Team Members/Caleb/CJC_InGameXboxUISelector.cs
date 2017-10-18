@@ -14,8 +14,8 @@ public class CJC_InGameXboxUISelector : MonoBehaviour {
 	[SerializeField]
 	bool hasbeenmoved = false;
 
-	private float LastSize = .66f;
-	private float selectedSize = .8f;
+	public float LastSize = .66f;
+	public float selectedSize = .8f;
 
 	[SerializeField]
 	float holdTimer = 0;
@@ -25,6 +25,10 @@ public class CJC_InGameXboxUISelector : MonoBehaviour {
 
 
 	bool readiedUP;
+	[SerializeField]
+	GameObject OBJTurnOn;
+	[SerializeField]
+	GameObject OBJTurnOff;
 
 // Use this for initialization
 void Start () 
@@ -179,30 +183,7 @@ void ManageSelectedUISize()
 {
 	selectableUI [SelectedUI].transform.localScale = new Vector3 (selectedSize, selectedSize, selectedSize);
 }
-	void controls(){
-		
 
-	
-
-			//System.Threading.Thread.Sleep (5000);
-		if (SelectedUI == 0) {
-			//core.ControllerToldMeToTurnYouOn = true;
-			Debug.Log ("showing Controls");
-
-			//GetComponent<AudioSource> ().PlayOneShot (buttonpressed);
-			pressed = false;
-			//core1.paused = true;
-			hastoshowcontrols = false;
-
-		} else if (SelectedUI == 0) {
-			//core.ControllerToldMeToTurnYouOn = false;
-			Debug.Log ("closing Controls");
-			//GetComponent<AudioSource> ().PlayOneShot (backbuttonpressed);
-			pressed = false;
-			//core1.paused = true;
-			hastoshowcontrols = false;
-		}
-	}
 
 	void ReadyUp()
 	{
@@ -246,13 +227,34 @@ void ManageButtonAction()
 			//selectableUI [SelectedUI].gameObject.GetComponent<Image> ().sprite = pressdown;
 
 
-			if (SelectedUI == 0) {
+			if (SelectedUI == 0)
+			{
+				OBJTurnOff.SetActive (false);
+				OBJTurnOn.SetActive (true);
 				//GetComponent<AudioSource> ().PlayOneShot (buttonpressed);
-				Invoke ("controls", .1f);
+				//Invoke ("controls", .1f);
 				//core1.paused = false;
 				hastoshowcontrols = true;
 
-			} else {
+			} 
+			else if (SelectedUI == 1)
+			{
+				//GetComponent<AudioSource> ().PlayOneShot (buttonpressed);
+				UnityEngine.SceneManagement.SceneManager.LoadScene(selectableUIScenes[1]);
+				//core1.paused = false;
+				//hastoshowcontrols = true;
+
+			} 
+			else if (SelectedUI == 2)
+			{
+				//GetComponent<AudioSource> ().PlayOneShot (buttonpressed);
+				UnityEngine.SceneManagement.SceneManager.LoadScene(selectableUIScenes[2]);
+				//core1.paused = false;
+				//hastoshowcontrols = true;
+
+			} 
+			else
+			{
 
 				//GetComponent<AudioSource> ().PlayOneShot (buttonpressed);
 				//ReadyUp();
