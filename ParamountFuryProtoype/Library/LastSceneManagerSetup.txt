@@ -1,4 +1,8 @@
 sceneSetups:
+<<<<<<< HEAD
 - path: Assets/Team Members/Brian/BJC_Level1.unity
+=======
+- path: Assets/Build Scenes/HubWorld.unity
+>>>>>>> e7d0ff03c58dd625bd288044c16df4c6dff2daa7
   isLoaded: 1
   isActive: 1
