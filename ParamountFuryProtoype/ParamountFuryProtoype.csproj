@@ -84,6 +84,8 @@
     <Compile Include="Assets\Scripts\Controls_menu.cs" />
     <Compile Include="Assets\Scripts\Credit_menu.cs" />
     <Compile Include="Assets\Scripts\NC_MenuManager.cs" />
+    <Compile Include="Assets\Scripts\scroller.cs" />
+    <Compile Include="Assets\Team Members\Caleb\CJC_HubClicky.cs" />
     <Compile Include="Assets\Team Members\Caleb\CJC_InGameXboxUISelector.cs" />
     <Compile Include="Assets\Team Members\Caleb\CJC_UISelectorXbox.cs" />
     <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_357bullet.cs" />
