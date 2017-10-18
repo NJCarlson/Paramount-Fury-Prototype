@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Team Members/Nick/NickTest.unity
+- path: Assets/Team Members/Brian/BJC_Level1.unity
   isLoaded: 1
   isActive: 1
