@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class scroller : MonoBehaviour {
 
+	[SerializeField]
+	string levelname;
+
     float timer = 45f;
 
 	// Update is called once per frame
@@ -13,7 +16,7 @@ public class scroller : MonoBehaviour {
         transform.position += transform.up * Time.deltaTime * 40;
         if (Input.anyKey || timer <= 0)
         {
-            SceneManager.LoadScene("Tutorial");
+			SceneManager.LoadScene(levelname);
         }
         timer -= Time.deltaTime;
         print(timer);
