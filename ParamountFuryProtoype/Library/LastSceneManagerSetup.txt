@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Build Scenes/HubWorld.unity
+- path: Assets/Team Members/Brian/BJC_Tutorial.unity
   isLoaded: 1
   isActive: 1
