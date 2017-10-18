@@ -54,6 +54,7 @@
      <Compile Include="Assets\Scripts\Controls_menu.cs" />
      <Compile Include="Assets\Scripts\Credit_menu.cs" />
      <Compile Include="Assets\Scripts\NC_MenuManager.cs" />
+     <Compile Include="Assets\Scripts\scroller.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_HubClicky.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_InGameXboxUISelector.cs" />
      <Compile Include="Assets\Team Members\Caleb\CJC_scripts\CJC_357bullet.cs" />
@@ -102,6 +103,9 @@
  </Reference>
  <Reference Include="nunit.framework">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+ </Reference>
+ <Reference Include="UnityEngine.Timeline">
+ <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Timeline/RuntimeEditor/UnityEngine.Timeline.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.Analytics">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
