@@ -7,7 +7,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{70B4F7F8-0B52-CB2F-246E-FE064296A94A}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <AssemblyName>Assembly-CSharp.dll</AssemblyName>
+    <AssemblyName>Assembly-CSharp</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TargetFrameworkIdentifier>.NETFramework</TargetFrameworkIdentifier>
@@ -50,34 +50,34 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="UnityEngine">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
-    </Reference>
-    <Reference Include="Facebook.Unity.Settings">
-      <HintPath>Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+      <HintPath>Library\UnityAssemblies\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
+      <HintPath>Library\UnityAssemblies\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Networking">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
+      <HintPath>Library\UnityAssemblies\UnityEngine.Networking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TestRunner">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/UnityEngine.TestRunner.dll</HintPath>
+      <HintPath>Library\UnityAssemblies\UnityEngine.TestRunner.dll</HintPath>
     </Reference>
     <Reference Include="nunit.framework">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/TestRunner/net35/unity-custom/nunit.framework.dll</HintPath>
+      <HintPath>Library\UnityAssemblies\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityAnalytics/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>Library\UnityAssemblies\UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.HoloLens">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityHoloLens/RuntimeEditor/UnityEngine.HoloLens.dll</HintPath>
+      <HintPath>Library\UnityAssemblies\UnityEngine.HoloLens.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.VR">
-      <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+      <HintPath>Library\UnityAssemblies\UnityEngine.VR.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor">
-      <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
+      <HintPath>Library\UnityAssemblies\UnityEditor.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook.Unity.Settings">
+      <HintPath>Library\FacebookSDK\Facebook.Unity.Settings.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -98,18 +98,22 @@
     <Compile Include="Assets\Team Members\Dustin\Health.cs" />
     <Compile Include="Assets\Team Members\Dustin\Rotator.cs" />
     <Compile Include="Assets\Team Members\Dustin\SliderTest.cs" />
-    <Compile Include="Assets\Team Members\Nick\NC_AgentTest.cs" />
-    <Compile Include="Assets\Team Members\Nick\NickNavMain.cs" />
-    <Compile Include="Assets\Team Members\Nick\NickNavMapgroup.cs" />
-    <Compile Include="Assets\Team Members\Nick\NickNavNode.cs" />
-    <Compile Include="Assets\Team Members\Nick\NickNavTestAgent.cs" />
+    <Compile Include="Assets\Team Members\Nick\MeleeEnemy.cs" />
+    <Compile Include="Assets\Team Members\Nick\NickNav\NC_AgentTest.cs" />
+    <Compile Include="Assets\Team Members\Nick\NickNav\NickNavMain.cs" />
+    <Compile Include="Assets\Team Members\Nick\NickNav\NickNavMapgroup.cs" />
+    <Compile Include="Assets\Team Members\Nick\NickNav\NickNavNode.cs" />
+    <Compile Include="Assets\Team Members\Nick\NickNav\NickNavTestAgent.cs" />
     <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Graph.cs" />
     <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Node.cs" />
     <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_PathfindingTest.cs" />
     <Compile Include="Assets\Team Members\Nick\Pathfinding\NC_Search.cs" />
+    <Compile Include="Assets\Team Members\Nick\RangedEnemy.cs" />
+    <Compile Include="Assets\Team Members\Tyler\Dummy.cs" />
     <Compile Include="Assets\Team Members\Tyler\beerBottle.cs" />
     <Compile Include="Assets\Team Members\Tyler\furyDrop.cs" />
     <Compile Include="Assets\Team Members\Tyler\healthDrop.cs" />
+    <Compile Include="Assets\Team Members\Tyler\wrench.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

@@ -103,7 +103,7 @@ public class CJC_MissionControl : MonoBehaviour {
 
 	void BodyCountMission()
 	{
-		print ("body count mission active");
+		//print ("body count mission active");
 		KillCountMAX = 25;
 
 		if (KillCountCUR >= KillCountMAX)
@@ -131,7 +131,7 @@ public class CJC_MissionControl : MonoBehaviour {
 
 	void PrizedPosessionMission()
 	{
-		print ("prized posession mission active");
+		//print ("prized posession mission active");
 		PrizedCollectiblesMAX = 3;
 
 		if (PrizedCollectiblesCUR >= PrizedCollectiblesMAX)
@@ -157,7 +157,7 @@ public class CJC_MissionControl : MonoBehaviour {
 
 	void SendAMessageMission()
 	{
-		print ("send a message mission active");
+		//print ("send a message mission active");
 		MessagesSentMAX = 10;
 
 		if (MessagesSentCUR >= MessagesSentMAX)
@@ -183,7 +183,7 @@ public class CJC_MissionControl : MonoBehaviour {
 
 	void HVTMission()
 	{
-		print ("HVT mission active");
+		//print ("HVT mission active");
 		if (!missioncompleted) {
 			if (HVTkilled) {
 				missionsCompleted += 1;

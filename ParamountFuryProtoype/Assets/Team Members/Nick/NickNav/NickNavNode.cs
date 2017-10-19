@@ -12,10 +12,9 @@ public class NickNavNode : MonoBehaviour {
    // Update is called once per frame
     void Start()
     {
-        if (blocked)
-        {
-            this.GetComponent<SpriteRenderer>().color = Color.red;
-        }
+        
+            this.GetComponent<SpriteRenderer>().enabled = false;
+        
     }
 
     public int GetGraphIndex()
