@@ -45,9 +45,13 @@ public class CJC_357bullet : MonoBehaviour {
 		}
 		else if (other.tag == "enemy")
 		{
+			GameObject jerrbear = GameObject.Find ("character parent");
+			CJC_HinezController jerry = jerrbear.GetComponent<CJC_HinezController> ();
+
+
             GameObject target = other.gameObject;
 	    	Dummy dummyStats = target.GetComponent<Dummy> ();
-            dummyStats.health -= 50;
+			dummyStats.health -= jerry.gundamage;
 			//GetComponent<SpriteRenderer> ().enabled = false;
 			//GetComponent<BoxCollider> ().enabled = false;
 			Destroy (gameObject, 0f);

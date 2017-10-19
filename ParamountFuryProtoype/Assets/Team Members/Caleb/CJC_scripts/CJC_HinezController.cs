@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CJC_HinezController : CJC_UML {
 
@@ -24,19 +25,65 @@ public class CJC_HinezController : CJC_UML {
 	AudioSource playersound;
 	[SerializeField]
 	AudioClip deathsound;
+	[SerializeField]
+	AudioClip ouch;
+
+	float damagetimer;
+	bool gothit;
+
+	public Animator corecharacteranim;
+	[SerializeField]
+	GameObject completiontext;
+
 
 	// Use this for initialization
 	void Start ()
 	{
+		corecharacteranim = gameObject.GetComponent<Animator> ();
 		playersound = gameObject.GetComponent<AudioSource> ();
 		charactername = "jerry";
 		playerlives = 3;
 	}
+
+	void refreshdamage()
+	{
+		if (gothit)
+		{
+			damagetimer += Time.deltaTime;
+
+			if (damagetimer >= 1)
+			{
+				damagetimer = 0;
+				gothit = false;
+			}
+		}
+	}
+
+	void OnTriggerStay(Collider other)
+	{
+		if (other.tag == "enemy" && !gothit)
+		{
+			playersound.PlayOneShot (ouch);
+			furybar += 2.5f;
+			if (!furyactive) {
+				health -= 20;
+			} else if (furyactive)
+			{
+				health -= 10;
+			}
+			gothit = true;
+		}
+	}
 	
 	void Update ()
 	{
-		if (!hasdied)
+		GameObject pitbull = GameObject.FindWithTag("GameController");
+		CJC_MissionControl mr305 = pitbull.GetComponent<CJC_MissionControl> ();
+
+
+		if (!hasdied && !mr305.missioncompleted)
 		{
+			refreshdamage ();
 			checkname ();
 			checkweapongun ();
 			checkmelee ();
@@ -49,6 +96,23 @@ public class CJC_HinezController : CJC_UML {
 		}
 
 		Managelives ();
+		CheckForMissioncomplete ();
+	}
+
+	void CheckForMissioncomplete()
+	{
+		GameObject pitbull = GameObject.FindWithTag("GameController");
+		CJC_MissionControl mr305 = pitbull.GetComponent<CJC_MissionControl> ();
+
+		if (mr305.missioncompleted)
+		{
+			corecharacteranim.SetBool ("MissionCompleted", true);
+		}
+	}
+
+	public void TransitionToHub()
+	{
+		SceneManager.LoadScene (5);
 	}
 
 	void Managelives()
@@ -144,6 +208,7 @@ public class CJC_HinezController : CJC_UML {
 		else if (furyactive)
 		{
 			furybar -= Time.deltaTime*10;
+			health += Time.deltaTime * 2.5f;
 
 			if (furybar <= 0)
 			{
@@ -231,7 +296,7 @@ public class CJC_HinezController : CJC_UML {
 		if (gunname == "357magnum")
 		{
 			gunfirerate = .33f;
-			gundamage = 175;
+			gundamage = 125;
 		}
 	}
 
@@ -240,7 +305,7 @@ public class CJC_HinezController : CJC_UML {
 		if (meleeweapon == "wrench")
 		{
 			meleeattackspeed = 1;
-			meleedamage = 175;
+			meleedamage = 90;
 		}
 	}
 }

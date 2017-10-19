@@ -13,11 +13,12 @@ public class CJC_CheckforController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
 		TestForController ();
 	}
 
 	void TestForController()
-	{
+	{	
 		string[] temp = Input.GetJoystickNames ();
 
 		if (temp.Length > 0)
@@ -26,11 +27,13 @@ public class CJC_CheckforController : MonoBehaviour {
 			{
 				if (!string.IsNullOrEmpty (temp [i]))
 				{
+					Cursor.visible = false;
 					controlleractive = true;
 					print ("controller plugged in, hiding mouse");
 				}
 				else 
 				{
+					Cursor.visible = true;
 					controlleractive = false;
 					print ("controller not plugged in, not showing mouse");
 				}

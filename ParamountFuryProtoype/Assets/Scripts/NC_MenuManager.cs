@@ -20,9 +20,8 @@ public class NC_MenuManager : MonoBehaviour {
         Application.Quit();
     }
 
-    public void Playbutton(string scene)
+    public void SceneSelect(string scene)
     {
         SceneManager.LoadScene(scene);
     }
-
 }
