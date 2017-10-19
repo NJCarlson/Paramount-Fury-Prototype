@@ -31,15 +31,16 @@ public class CJC_UISelectorXbox : MonoBehaviour
 	void Start () 
 	{
 		Screen.fullScreen = true;
-		//SelectedUI = 0;
-		//SelectedUIScenes = 0;
+		SelectedUI = 0;
+		SelectedUIScenes = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
 
-		if (CJC_CheckforController.controlleractive) {
+		if (CJC_CheckforController.controlleractive)
+		{
 			SelectedUIString ();
 			ManageSelectedUISize ();
 			testInPut ();
