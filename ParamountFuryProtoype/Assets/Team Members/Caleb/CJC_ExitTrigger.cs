@@ -18,10 +18,11 @@ public class CJC_ExitTrigger : MonoBehaviour {
 		
 	}
 
-	void OnTiggerEnter(Collider other)
+	void OnTriggerEnter(Collider other)
 	{
-		if (other.tag == "Player")
+		if (other.name == "character parent")
 		{
+			print ("doing the thing");
 			SceneManager.LoadScene (level);
 		}
 	}
